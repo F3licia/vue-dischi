@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title> Vue Dischi</title>
+</head>
+
+<body>
+ <main id="vueapp">
+
+    <div class="single-container">
+        <div v-for="element in albumList" class="card">
+            <h5>{{element.author}}</h5>
+            <h5>{{element.genre}}</h5>
+            <h5>{{element.title}}</h5>
+            <h5>{{element.year}}</h5>
+            <img alt="" src="">
+        </div>
+    </div>
+
+        
+   
+ 
+
+ </main>
+ <script src="scriptAlbumList.js"></script>   
+</body>
+</html>
+
+
+
+
