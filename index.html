@@ -11,22 +11,37 @@
 </head>
 
 <body>
- <main id="vueapp">
+ <main id="vueapp" class="main">
 
-    <div class="single-container">
-        <div v-for="element in albumList" class="card">
-            <h5>{{element.author}}</h5>
-            <h5>{{element.genre}}</h5>
-            <h5>{{element.title}}</h5>
-            <h5>{{element.year}}</h5>
-            <img alt="" src="">
-        </div>
-    </div>
-
-        
-   
+    <div class="col">
  
+        <select v-model="selected"name="genres" id="select">
+            <option value="all">All</option>
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="jazz">Jazz</option>
+            <option value="metal">Metal</option>
+            
+        </select>
 
+
+    </div>
+    <div class="container">
+
+        <div class="album-container">
+            <div v-for="(element,index, genre) in filtered" class="card">
+                <div class="cover"><img alt="" v-bind:src="element.poster"> </div>
+                <div class="info">
+                    <h3 class="author">{{element.author}}</h3>
+                    <h5 class="title">{{element.title}}</h5>
+                    <h6 class="date">{{element.year}}</h6>
+                </div>
+            </div>
+        </div>
+
+    
+ 
+    </div>
  </main>
  <script src="scriptAlbumList.js"></script>   
 </body>

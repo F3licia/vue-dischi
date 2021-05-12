@@ -1,15 +1,27 @@
-const app = new Vue(
-
-    {
+const app = new Vue({
         el: '#vueapp',
         data: {
             albumList:[],
-            coverartList:[],
-
+            filteredData:[],
+            selected:"all"
             },
             methods:{
+              
             },
-           
+            computed:{
+
+                filtered() {  //non funziona
+                    if(this.selected === "all"){
+                        return this.albumList
+                    } 
+                    const filteredData = this.albumList.filter((element) => {
+                    
+                        return element.genre === this.selected;
+                    });
+        
+                    return filteredData;
+                },
+            },
                mounted()  {
                     axios.get("https://flynn.boolean.careers/exercises/api/array/music")          
                     .then((resp)=> {
@@ -20,9 +32,9 @@ const app = new Vue(
                 },    
             
 
-        }
+        
 
-);
+});
 
 
 

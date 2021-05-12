@@ -1,8 +1,83 @@
-.singlecontainer{
+*{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
+.main{
+    display: flex;
+ }
+
+.col{
+    width: 600px;
+    height: 100vh;
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0px 10px 10px #888888;
+}
+
+.container{
+height: 100vh;
+overflow: scroll;
+}
+
+.album-container{
+    margin: 30px;
     display: flex;
     flex-wrap: wrap;
  }
+
 .card{
+    margin: 20px;
+    width: calc(100% / 5);
+    height: auto;
+    
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+    .card:hover{
+        transform: scale(1.1);
+    }
+
+
+
+.info{
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    .author{
+        font-weight: lighter;
+        opacity: 50%;
+    }
+       .title{
+        font-weight: bolder;
+        opacity: 80%;
+    }   .date{
+        font-weight: bolder;
+        opacity: 50%;
+    }
+
+
+
+.cover{
+    box-shadow: 2px 2px 4px #888888;
+    margin: auto;
     width: 200px;
-    height: 200px;
+    height: 200px;  
+} .cover:hover{
+    transform: scale(1.1);
+    box-shadow: 10px 10px 15px #adadad;
+}
+.cover:active {
+    transform: scale(0.9);
+}
+
+.cover > img{
+    min-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+
 }
