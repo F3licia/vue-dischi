@@ -10,7 +10,7 @@ const app = new Vue({
             },
             computed:{
 
-                filtered() {  //non funziona
+                filtered() {  
                     if(this.selected === "all"){
                         return this.albumList
                     } 
@@ -28,7 +28,7 @@ const app = new Vue({
                         for(let i = 0; i < 10; i ++)
                         this.albumList.push((resp.data.response)[i]);
                      });
-                     
+                     this.filtered()
                 },    
             
 
