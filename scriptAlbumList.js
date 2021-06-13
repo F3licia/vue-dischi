@@ -1,6 +1,7 @@
 const app = new Vue({
         el: '#vueapp',
         data: {
+            genresList:[],
             albumList:[],
             filteredData:[],
             selected:"all"
@@ -25,8 +26,12 @@ const app = new Vue({
                mounted()  {
                     axios.get("https://flynn.boolean.careers/exercises/api/array/music")          
                     .then((resp)=> {
-                        for(let i = 0; i < 10; i ++)
-                        this.albumList.push((resp.data.response)[i]);
+                        this.albumList = resp.data.response;
+                        this.albumList.forEach((el) => {
+                            if(!this.genresList.includes(el.genre)){
+                             this.genresList.push(el.genre);       
+                            }
+                        })
                      });
                      this.filtered()
                 },    
